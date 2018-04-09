@@ -36,7 +36,7 @@ hr {
     border: 1px solid rgb(128, 128, 128);
 }
 
-p {
+.subhead {
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
@@ -53,4 +53,39 @@ p {
 .divide {
 	margin-top: 28px;
 	/*margin-bottom: 10px;*/
+}
+.btn {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  color: #ffffff;
+  font-size: 20px;
+  background: #005994;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.learn-more {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.paint-grid {
+	padding:10px 10px 10px 10px;
+}
+
+.grid-photo {
+	max-width: 100%;
+}
+
+.more-details {
+	margin-top: 5px;
+	margin-bottom:5px;
 }
