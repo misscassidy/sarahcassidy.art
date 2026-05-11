@@ -130,7 +130,7 @@ main {
 
 .collection-card-image {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   background: var(--off-white);
   border: 1px solid var(--border);
   display: flex;
@@ -219,7 +219,7 @@ main {
 .painting-frame {
   border: 1px solid var(--border);
   background: var(--off-white);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   transition: border-color 0.3s ease;
 }
