@@ -273,17 +273,18 @@ main {
 .about-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - var(--nav-height));
 }
 
 .about-image-col {
   border-right: 1px solid var(--border-light);
   padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-portrait {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  flex: 1;
   border: 1px solid var(--border);
   background: var(--off-white);
   overflow: hidden;
@@ -392,7 +393,8 @@ footer p {
   .paintings-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 32px 24px; }
   .collection-header { padding: 40px 24px 28px; flex-direction: column; gap: 8px; }
   .about-wrapper { grid-template-columns: 1fr; }
-  .about-image-col { border-right: none; border-bottom: 1px solid var(--border-light); padding: 40px 24px; }
+  .about-image-col { order: 1; border-right: none; border-top: 1px solid var(--border-light); padding: 40px 24px; }
+  .about-portrait { flex: initial; aspect-ratio: 4 / 5; }
   .about-text-col { padding: 40px 24px; }
   footer { padding: 24px; flex-direction: column; gap: 8px; }
 }
