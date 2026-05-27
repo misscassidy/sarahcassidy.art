@@ -27,24 +27,28 @@
 
     <div class="paintings-grid">
 
+      <!-- Tree 2 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Trees/Tree 2-1.jpeg" alt="Tree 2" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Trees/Tree 2-1.jpeg" alt="Tree 2" /></div>
+          </div>
         </div>
-        <div class="painting-meta">
-          <p class="painting-title">Tree 2</p>
-          <p class="painting-details"></p>
-        </div>
+        <div class="painting-meta"><p class="painting-title">Tree 2</p><p class="painting-details"></p></div>
       </div>
 
+      <!-- Tree 3 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Trees/Tree 3-1.jpeg" alt="Tree 3" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Trees/Tree 3-1.jpeg" alt="Tree 3" /></div>
+            <div class="carousel-slide"><img src="images/Trees/Tree 3-2.JPG" alt="Tree 3" /></div>
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
+            <div class="carousel-counter"></div>
+          </div>
         </div>
-        <div class="painting-meta">
-          <p class="painting-title">Tree 3</p>
-          <p class="painting-details"></p>
-        </div>
+        <div class="painting-meta"><p class="painting-title">Tree 3</p><p class="painting-details"></p></div>
       </div>
 
     </div>
@@ -55,6 +59,32 @@
     <p>&copy; 2026 Sarah Cassidy. All rights reserved.</p>
     <p>Brooklyn, New York</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.carousel').forEach(function(carousel) {
+      var slides = carousel.querySelectorAll('.carousel-slide');
+      if (slides.length <= 1) return;
+      var current = 0;
+      var counter = carousel.querySelector('.carousel-counter');
+
+      function update() {
+        slides.forEach(function(s) { s.classList.remove('active'); });
+        slides[current].classList.add('active');
+        if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+      }
+
+      carousel.querySelector('.carousel-btn--prev').addEventListener('click', function() {
+        current = (current - 1 + slides.length) % slides.length;
+        update();
+      });
+      carousel.querySelector('.carousel-btn--next').addEventListener('click', function() {
+        current = (current + 1) % slides.length;
+        update();
+      });
+
+      update();
+    });
+  </script>
 
 </body>
 </html>
