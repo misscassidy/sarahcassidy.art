@@ -288,6 +288,20 @@ main {
 }
 
 /* ABOUT PAGE */
+.about-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 48px 48px 0;
+}
+
+.about-hero img {
+  max-width: 560px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .about-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
