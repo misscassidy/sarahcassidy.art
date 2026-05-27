@@ -205,7 +205,6 @@ main {
 }
 
 .collection-intro {
-  max-width: 680px;
   padding: 40px 48px;
   border-bottom: 1px solid var(--border-light);
 }
