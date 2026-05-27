@@ -204,6 +204,24 @@ main {
   font-weight: 200;
 }
 
+.collection-intro {
+  max-width: 680px;
+  padding: 40px 48px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.collection-intro p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 1em;
+}
+
+.collection-intro p:last-child {
+  margin-bottom: 0;
+}
+
 .paintings-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
