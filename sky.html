@@ -27,9 +27,19 @@
 
     <div class="paintings-grid">
 
+      <!-- Sky 1 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Sky/Sky 1-1.jpeg" alt="Sky 1" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/Sky 1-1.jpeg" alt="Sky 1" /></div>
+            <div class="carousel-slide"><img src="images/Sky/sky 1-2.jpeg" alt="Sky 1" /></div>
+            <div class="carousel-slide"><img src="images/Sky/sky 1-3.jpeg" alt="Sky 1" /></div>
+            <div class="carousel-slide"><img src="images/Sky/Sky 1-4.jpeg" alt="Sky 1" /></div>
+            <div class="carousel-slide"><img src="images/Sky/sky 1-5.jpeg" alt="Sky 1" /></div>
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
+            <div class="carousel-counter"></div>
+          </div>
         </div>
         <div class="painting-meta">
           <p class="painting-title">Sky 1</p>
@@ -37,9 +47,12 @@
         </div>
       </div>
 
+      <!-- Sky 2 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Sky/sky 2-1.jpeg" alt="Sky 2" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/sky 2-1.jpeg" alt="Sky 2" /></div>
+          </div>
         </div>
         <div class="painting-meta">
           <p class="painting-title">Sky 2</p>
@@ -47,9 +60,29 @@
         </div>
       </div>
 
+      <!-- Sky 3 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Sky/sky 4-1.jpeg" alt="Sky 4" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/Sky 3-1.jpeg" alt="Sky 3" /></div>
+            <div class="carousel-slide"><img src="images/Sky/Sky 3-2.jpeg" alt="Sky 3" /></div>
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&#8592;</button>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">&#8594;</button>
+            <div class="carousel-counter"></div>
+          </div>
+        </div>
+        <div class="painting-meta">
+          <p class="painting-title">Sky 3</p>
+          <p class="painting-details"></p>
+        </div>
+      </div>
+
+      <!-- Sky 4 -->
+      <div class="painting-item">
+        <div class="painting-frame">
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/sky 4-1.jpeg" alt="Sky 4" /></div>
+          </div>
         </div>
         <div class="painting-meta">
           <p class="painting-title">Sky 4</p>
@@ -57,9 +90,12 @@
         </div>
       </div>
 
+      <!-- Sky 5 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Sky/Sky 5-1.jpg" alt="Sky 5" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/Sky 5-1.jpg" alt="Sky 5" /></div>
+          </div>
         </div>
         <div class="painting-meta">
           <p class="painting-title">Sky 5</p>
@@ -67,9 +103,12 @@
         </div>
       </div>
 
+      <!-- Sky 6 -->
       <div class="painting-item">
         <div class="painting-frame">
-          <img src="images/Sky/Sky 6-1.jpeg" alt="Sky 6" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'painting-placeholder\'>Image</div>'" />
+          <div class="carousel">
+            <div class="carousel-slide active"><img src="images/Sky/Sky 6-1.jpeg" alt="Sky 6" /></div>
+          </div>
         </div>
         <div class="painting-meta">
           <p class="painting-title">Sky 6</p>
@@ -85,6 +124,32 @@
     <p>&copy; 2026 Sarah Cassidy. All rights reserved.</p>
     <p>New York</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.carousel').forEach(function(carousel) {
+      var slides = carousel.querySelectorAll('.carousel-slide');
+      if (slides.length <= 1) return;
+      var current = 0;
+      var counter = carousel.querySelector('.carousel-counter');
+
+      function update() {
+        slides.forEach(function(s) { s.classList.remove('active'); });
+        slides[current].classList.add('active');
+        if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+      }
+
+      carousel.querySelector('.carousel-btn--prev').addEventListener('click', function() {
+        current = (current - 1 + slides.length) % slides.length;
+        update();
+      });
+      carousel.querySelector('.carousel-btn--next').addEventListener('click', function() {
+        current = (current + 1) % slides.length;
+        update();
+      });
+
+      update();
+    });
+  </script>
 
 </body>
 </html>
