@@ -283,7 +283,26 @@ main {
   text-transform: uppercase;
   color: var(--text-muted);
   font-weight: 200;
+  margin-bottom: 4px;
   margin-top: 4px;
+}
+
+.painting-sold {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.painting-inquire {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: 300;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* CAROUSEL */
