@@ -497,6 +497,7 @@ footer p {
   .nav-links { gap: 24px; }
   .landing-hero { padding: 60px 24px 40px; }
   .collection-grid { grid-template-columns: 1fr; gap: 0; }
+  .collection-card + .collection-card { border-top: 1px solid var(--border-light); }
   .paintings-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding: 32px 24px; }
   .collection-header { padding: 40px 24px 28px; flex-direction: column; gap: 8px; }
   .about-wrapper { grid-template-columns: 1fr; }
